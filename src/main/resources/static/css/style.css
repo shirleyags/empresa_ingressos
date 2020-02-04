@@ -1,0 +1,31 @@
+
+.imagem_carrossel1{
+	object-fit:cover;
+	object-position:0 20%;
+	height:500px;
+}
+.imagem_carrossel2{
+	object-fit:cover;
+	object-position:0 70%;
+	height:500px;
+}
+.imagem_carrossel3{
+	object-fit:cover;
+	object-position:0 5%;
+	height:500px;
+}
+
+footer {
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:2000px;
+    background-color:#FFA500;
+}
+a{
+	color:white;
+}
+
+
+
+
