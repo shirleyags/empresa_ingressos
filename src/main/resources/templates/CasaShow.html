@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Shows</title>
+</head>
+<body>
+
+
+	<section layout:fragment="conteudo">
+
+		<form class="mover_formulario" method="POST">
+			<div class="form-group col-md-4">
+				<label for="formGroupExampleInput">Nome da Casa de Shows</label> 
+				<input type="text"
+					class="form-control" id="formGroupExampleInput"
+					placeholder="Insira o evento" name="casa">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="formGroupExampleInput2">Logradouro</label> <input
+					type="text" class="form-control" id="formGroupExampleInput2"
+					placeholder="Insira quantas pessoas a casa suporta"
+					name="logradouro">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="formGroupExampleInput2">Cidade</label> <input
+					type="text" class="form-control" id="formGroupExampleInput2"
+					placeholder="Insira quantas pessoas a casa suporta"
+					name="cidade">
+			</div>
+			<div class="form-group col-md-1">
+				<label for="formGroupExampleInput2">Estado</label> <input
+					type="text" class="form-control" id="formGroupExampleInput2"
+					placeholder="Insira quantas pessoas a casa suporta"
+					name="estado">
+			</div>
+			<button type="submit" class="btn btn-primary">Entrar</button>
+
+		</form>
+
+
+		<table class="table mover_tabela">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Casa de Show</th>
+					<th scope="col">Logradouro</th>
+					<th scope="col">Cidade</th>
+					<th scope="col">Estado</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+					<td>@mdo</td>
+					
+				</tr>
+			
+			</tbody>
+		</table>
+	</section>
+
+</body>
+</html>

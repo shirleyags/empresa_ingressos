@@ -9,6 +9,7 @@
 	object-position:0 70%;
 	height:500px;
 }
+
 .imagem_carrossel3{
 	object-fit:cover;
 	object-position:0 5%;
@@ -24,6 +25,11 @@ footer {
 }
 a{
 	color:white;
+}
+.mover_formulario{
+	margin-top:40px;
+	margin-left: 20px;
+	margin-bottom: 70px;	
 }
 
 
