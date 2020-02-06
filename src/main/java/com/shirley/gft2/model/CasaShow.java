@@ -12,18 +12,11 @@ public class CasaShow {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long code;
-	private String casa;
-	private String logradouro;
-	private String cidade;
-	private String estado;
-	
-	
-	
-	public long getCode() {
+	private Long code;
+	public Long getCode() {
 		return code;
 	}
-	public void setCode(long code) {
+	public void setCode(Long code) {
 		this.code = code;
 	}
 	public String getCasa() {
@@ -50,6 +43,14 @@ public class CasaShow {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+	private String casa;
+	private String logradouro;
+	private String cidade;
+	private String estado;
+	
+	
+	
+	
 	
 	
 	

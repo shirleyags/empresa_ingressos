@@ -9,24 +9,27 @@ import com.shirley.gft2.model.CasaShow;
 import com.shirley.gft2.repository.CasaCadastros;
 
 @Controller
-public class ControllerCadastroCasaShow {
+@RequestMapping("/casa")
 
+
+public class ControllerCadastroCasaShow {
+	
 	
 	@Autowired
-	private CasaCadastros cadastrocasa;
+	private CasaCadastros cadastrosCasa;
 
-	@RequestMapping("/cadastroscasas")
-	public String cadastroscasas() {
-		return "CasaShow";
+
+	@RequestMapping("/cadastro")
+	public String cadastrar() { 	
+		return "Casa/CasaShow";
 	}
-
-	@RequestMapping(value = "/cadastroscasas", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/cadastro", method = RequestMethod.POST)
 	public String salvar(CasaShow casa) {
+		cadastrosCasa.save(casa);
 		
-		cadastroscasas.save(casa);
-		
-		return "CasaShow";
-
+		return "Casa/ListaCasas";
 	}
-
+	
+	
 }
