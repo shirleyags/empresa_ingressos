@@ -9,6 +9,10 @@ import javax.persistence.Id;
 public class CasaShow {
 	
 	
+	private String casa;
+	private String logradouro;
+	private String cidade;
+	private String estado;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -43,12 +47,7 @@ public class CasaShow {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	private String casa;
-	private String logradouro;
-	private String cidade;
-	private String estado;
-	
-	
+
 	
 	
 	

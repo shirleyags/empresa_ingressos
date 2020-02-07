@@ -20,19 +20,30 @@
 					<th scope="col">Logradouro</th>
 					<th scope="col">Cidade</th>
 					<th scope="col">Estado</th>
-					
+					<th scope="col">Edição</th>
+
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
+				<tr th:each="casa : ${casas}">
+					<td th:text="${casa.code}"></td>
+					<td th:text="${casa.casa}"></td>
+					<td th:text="${casa.logradouro}"></td>
+					<td th:text="${casa.cidade}"></td>
+					<td th:text="${casa.estado}"></td>
+					<td>
+					<a class="btn btn-link btn-xs" th:href="@{/casa/casacadastro/{code}(code=${casa.code})}"><img src="/icone/pencil-2x.png"></a>
+					<a class="btn btn-link btn-xs"><img src="/icone/x-2x.png"></a>
+					</td>
 					
 				</tr>
-			
+
+				<tr>
+
+					<td colspan="5">Nenhuma casa foi encontrada</td>
+
+				</tr>
+
 			</tbody>
 		</table>
 	</section>
