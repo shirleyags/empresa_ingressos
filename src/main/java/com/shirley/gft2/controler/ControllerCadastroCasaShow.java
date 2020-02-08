@@ -18,12 +18,8 @@ import com.shirley.gft2.repository.CasaCadastros;
 @RequestMapping("/casa")
 public class ControllerCadastroCasaShow {
 	
-	
-	
 	@Autowired
 	private CasaCadastros cadastroscasa;
-	
-	
 	
 	@RequestMapping("/casacadastro")
 	public ModelAndView CasaCadastrar() {
@@ -43,23 +39,19 @@ public class ControllerCadastroCasaShow {
 	public ModelAndView pesquisar() { //Para criar a lista de casas de show.
 		List<CasaShow> todasCasas = cadastroscasa.findAll();
 		ModelAndView mv = new ModelAndView("/Casa/ListaCasas");
-		mv.addObject("casas", todasCasas); // As lista de objetos "todasCasas" estará disponível na view com o nome "casas". 
-		return mv;
+		mv.addObject("casas", todasCasas); // As lista de objetos "todasCasas" estará disponível na view com o nome "casas".
+		return mv;}
 
-	}
+
 	
 	@RequestMapping ("/{code}")
 	public ModelAndView editar(@PathVariable Long code) {
 		ModelAndView mv = new ModelAndView("/Casa/CasaShow");
 		CasaShow casaRetorna = cadastroscasa.findById(code).get();
 		mv.addObject(casaRetorna);
-		return mv;
-		
-		
-		
-	}
-	
-	
-	
+		return mv;	}
+
+
+
 
 }
