@@ -10,9 +10,10 @@
 
 
 
-	<section layout:fragment="conteudo"  >
+	<section layout:fragment="conteudo" >
 
-		<form class="mover_formulario" method="POST" th:object = "${casaShow}">
+		<form class="mover_formulario" method="POST" action="/casa/casacadastro" th:object = "${casaShow}">
+			<input type="hidden" th:field="*{code}"/>
 			<div class="form-group col-md-4">
 				<label for="formGroupExampleInput">Nome da Casa de Shows</label> 
 				<input type="text"

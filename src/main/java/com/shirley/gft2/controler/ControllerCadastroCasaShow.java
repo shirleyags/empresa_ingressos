@@ -15,20 +15,19 @@ import com.shirley.gft2.repository.CasaCadastros;
 
 
 @Controller
-@RequestMapping("/casa")
 public class ControllerCadastroCasaShow {
 	
 	@Autowired
 	private CasaCadastros cadastroscasa;
 	
-	@RequestMapping("/casacadastro")
+	@RequestMapping("/casa/casacadastro")
 	public ModelAndView CasaCadastrar() {
 		ModelAndView mv = new ModelAndView("/Casa/CasaShow");
 		mv.addObject(new CasaShow());
 		return mv;
 	}
 	
-	@RequestMapping(value="/casacadastro", method=RequestMethod.POST)
+	@RequestMapping(value="/casa/casacadastro", method=RequestMethod.POST)
 	public ModelAndView salvar(CasaShow casa) {
 		ModelAndView mv = new ModelAndView("/Casa/CasaShow");
 		cadastroscasa.save(casa);
@@ -36,7 +35,7 @@ public class ControllerCadastroCasaShow {
 	}
 	
 	
-	@RequestMapping ("/listacasas")
+	@RequestMapping ("/casa/listacasas")
 	public ModelAndView pesquisar() { //Para criar a lista de casas de show.
 		List<CasaShow> todasCasas = cadastroscasa.findAll();
 		ModelAndView mv = new ModelAndView("/Casa/ListaCasas");
@@ -45,7 +44,7 @@ public class ControllerCadastroCasaShow {
 
 
 	
-	@RequestMapping ("/{code}")
+	@RequestMapping ("/casa/{code}")
 	public ModelAndView editar(@PathVariable Long code) {
 		ModelAndView mv = new ModelAndView("/Casa/CasaShow");
 		CasaShow casaRetorna = cadastroscasa.findById(code).get();
