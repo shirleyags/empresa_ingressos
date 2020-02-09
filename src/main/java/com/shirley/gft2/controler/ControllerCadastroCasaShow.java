@@ -24,6 +24,7 @@ public class ControllerCadastroCasaShow {
 	@RequestMapping("/casacadastro")
 	public ModelAndView CasaCadastrar() {
 		ModelAndView mv = new ModelAndView("/Casa/CasaShow");
+		mv.addObject(new CasaShow());
 		return mv;
 	}
 	
