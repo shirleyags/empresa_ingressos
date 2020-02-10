@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+<html xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="confirmacaoExclusaoModal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <form action="/casa/casacadastro" method="POST">
+        <input type="hidden" name ="_method" value="DELETE"/>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ATENÇÃO</h5>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja apagar?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" >Excluir</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
+
 </html>

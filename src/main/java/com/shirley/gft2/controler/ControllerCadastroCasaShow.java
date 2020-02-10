@@ -26,15 +26,13 @@ public class ControllerCadastroCasaShow {
 		mv.addObject(new CasaShow());
 		return mv;
 	}
-	
+
 	@RequestMapping(value="/casa/casacadastro", method=RequestMethod.POST)
-	public ModelAndView salvar(CasaShow casa) {
-		ModelAndView mv = new ModelAndView("/Casa/CasaShow");
+	public String salvar(CasaShow casa) {
 		cadastroscasa.save(casa);
-		return mv;
+		return "redirect:/casa/casacadastro";
 	}
-	
-	
+
 	@RequestMapping ("/casa/listacasas")
 	public ModelAndView pesquisar() { //Para criar a lista de casas de show.
 		List<CasaShow> todasCasas = cadastroscasa.findAll();
@@ -51,7 +49,10 @@ public class ControllerCadastroCasaShow {
 		mv.addObject(casaRetorna);
 		return mv;	}
 
-
-
+	@RequestMapping(value="{code}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long code){
+		cadastroscasa.deleteById(code);
+		return "redirect:/casa/listacasas";
+	}
 
 }

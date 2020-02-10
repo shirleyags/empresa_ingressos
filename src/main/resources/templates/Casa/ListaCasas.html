@@ -32,8 +32,8 @@
 					<td th:text="${casa.cidade}"></td>
 					<td th:text="${casa.estado}"></td>
 					<td>
-					<a class="btn btn-link btn-xs" th:href="@{/casa/{code}(code=${casa.code})}"><img src="/icone/pencil-2x.png"></a>
-					<a class="btn btn-link btn-xs"><img src="/icone/x-2x.png"></a>
+					<a class="btn btn-link btn-xs" th:href="@{/casa/{code}(code=${casa.code})}"><img src="/icone/pencil-2x.png" ></a>
+					<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal"><img src="/icone/x-2x.png"></a>
 					</td>
 					
 				</tr>
@@ -46,6 +46,7 @@
 
 			</tbody>
 		</table>
+		<div layout:insert="CaixaConfimarcaoExclusao"></div>
 	</section>
 
 </body>

@@ -1,9 +1,6 @@
 package com.shirley.gft2.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CasaShow {
@@ -12,7 +9,7 @@ public class CasaShow {
 	private String casa;
 	private String logradouro;
 	private String cidade;
-	private String estado;
+
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
