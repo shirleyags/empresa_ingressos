@@ -12,6 +12,8 @@
 
 	<section layout:fragment="conteudo">
 
+		<form >
+		</form>
 		<table class="table mover_tabela">
 			<thead class="thead-dark">
 				<tr>
@@ -34,8 +36,11 @@
 					<td>
 					<a class="btn btn-link btn-xs" th:href="@{/casa/{code}(code=${casa.code})}"><img src="/icone/pencil-2x.png"></a>
 					 <!--  th:attr="data-codigo=${casa.code}" th:attr= PARA ADICIONAR UM ATRIBUTO QUAKQUER EXTRA COM O THYMELEAF --> 
-					<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal" th:attr="data-codigo=${casa.code}"><img src="/icone/x-2x.png"></a>
+					<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal" th:attr="data-code=${casa.code}, data-casa=${casa.casa}"><img src="/icone/x-2x.png"></a>
 					</td>
+					
+					
+					
 					
 				</tr>
 

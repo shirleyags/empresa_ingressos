@@ -49,7 +49,8 @@ public class ControllerCadastroCasaShow {
 		mv.addObject(casaRetorna);
 		return mv;	}
 
-	@RequestMapping(value="/casa/{code}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/casa/{code}",
+			method = RequestMethod.POST)
 	public String excluir(@PathVariable Long code){
 		cadastroscasa.deleteById(code);
 		return "redirect:/casa/listacasas";
