@@ -9,6 +9,7 @@ public class CasaShow {
 	private String casa;
 	private String logradouro;
 	private String cidade;
+	private String estado;
 
 
 	@Id

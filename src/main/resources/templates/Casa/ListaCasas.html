@@ -32,8 +32,9 @@
 					<td th:text="${casa.cidade}"></td>
 					<td th:text="${casa.estado}"></td>
 					<td>
-					<a class="btn btn-link btn-xs" th:href="@{/casa/{code}(code=${casa.code})}"><img src="/icone/pencil-2x.png" ></a>
-					<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal"><img src="/icone/x-2x.png"></a>
+					<a class="btn btn-link btn-xs" th:href="@{/casa/{code}(code=${casa.code})}"><img src="/icone/pencil-2x.png"></a>
+					 <!--  th:attr="data-codigo=${casa.code}" th:attr= PARA ADICIONAR UM ATRIBUTO QUAKQUER EXTRA COM O THYMELEAF --> 
+					<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoExclusaoModal" th:attr="data-codigo=${casa.code}"><img src="/icone/x-2x.png"></a>
 					</td>
 					
 				</tr>
