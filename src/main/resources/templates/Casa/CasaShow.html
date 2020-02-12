@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	  layout:decorator="LayoutPadrao">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
 <head>
 <meta charset="UTF-8">
 <title>Cadastrar Shows</title>
@@ -10,41 +10,42 @@
 
 
 
-	<section layout:fragment="conteudo" >
+<section layout:fragment="conteudo">
 
-		<form class="mover_formulario" method="POST" action="/casa/casacadastro" th:object = "${casaShow}">
-			<input type="hidden" th:field="*{code}"/>
-			<div class="form-group col-md-4">
-				<label for="formGroupExampleInput">Nome da Casa de Shows</label> 
-				<input type="text"
-					class="form-control" id="casa"
-					placeholder="Insira o evento" th:field="*{casa}"/>
-			</div>
-			<div class="form-group col-md-4">
-				<label for="formGroupExampleInput2">Logradouro</label> <input
-					type="text" class="form-control" id="logradouro"
-					placeholder="Insira quantas pessoas a casa suporta"
-					th:field="*{logradouro}"/>
-			</div>
-			<div class="form-group col-md-2">
-				<label for="formGroupExampleInput2">Cidade</label> <input
-					type="text" class="form-control" id="cidade"
-					placeholder="Insira quantas pessoas a casa suporta"
-					th:field="*{cidade}"/>
-			</div>
-			<div class="form-group col-md-1">
-				<label for="formGroupExampleInput2">Estado</label> <input
-					type="text" class="form-control" id="estado"
-					placeholder="Insira quantas pessoas a casa suporta"
-					th:field="*{estado}"/>
-			</div>
-			<button type="submit" class="btn btn-primary">Entrar</button>
-
-		</form>
+	<div class="faixa">
+		<h1>CADASTRAR CASAS DE SHOW</h1>
+	</div>
 
 
-		
-	</section>
+
+	<form class="mover_formulario" method="POST"
+		action="/casa/casacadastro" th:object="${casaShow}">
+		<input type="hidden" th:field="*{code}" />
+		<div class="form-group col-md-4">
+			<label class="label_letras" for="formGroupExampleInput">Nome
+				da Casa de Shows</label> <input type="text" class="form-control" id="casa"
+				placeholder="Insira o evento" th:field="*{casa}" />
+		</div>
+		<div class="form-group col-md-4">
+			<label class="label_letras" for="formGroupExampleInput2">Logradouro</label>
+			<input type="text" class="form-control" id="logradouro"
+				placeholder="Insira o endereço" th:field="*{logradouro}" />
+		</div>
+		<div class="form-group col-md-2">
+			<label class="label_letras" for="formGroupExampleInput2">Cidade</label>
+			<input type="text" class="form-control" id="cidade"
+				placeholder="Cidade" th:field="*{cidade}" />
+		</div>
+		<div class="form-group col-md-1">
+			<label class="label_letras" for="formGroupExampleInput2">Estado</label>
+			<input type="text" class="form-control" id="estado"
+				placeholder="Sigla" th:field="*{estado}" />
+
+			<button type="submit" class="btn btn-primary mover_botao">Inserir</button>
+		</div>
+	</form>
+
+</section>
 
 
 </html>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.shirley.gft2.model.CasaShow;
 import com.shirley.gft2.repository.CasaCadastros;
+import com.shirley.gft2.repository.filter.CasaFiltro;
 
 
 
@@ -34,8 +36,10 @@ public class ControllerCadastroCasaShow {
 	}
 
 	@RequestMapping ("/casa/listacasas")
-	public ModelAndView pesquisar() { //Para criar a lista de casas de show.
-		List<CasaShow> todasCasas = cadastroscasa.findAll();
+	public ModelAndView pesquisar(@ModelAttribute("filtro") CasaFiltro filtro) { // Para criar a lista de casas de show.
+		// (@RequestParam(defaultValue = "%")String casa) - Para que sem um elemento na pesquisa a página não quebre ao apertar busca.
+		String casa =  filtro.getCasa() == null ? "%" : filtro.getCasa();
+		List<CasaShow> todasCasas = cadastroscasa.findByCasaContaining (casa);
 		ModelAndView mv = new ModelAndView("/Casa/ListaCasas");
 		mv.addObject("casas", todasCasas); // As lista de objetos "todasCasas" estará disponível na view com o nome "casas".
 		return mv;}
