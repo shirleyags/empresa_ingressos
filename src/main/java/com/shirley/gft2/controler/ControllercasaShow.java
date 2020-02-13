@@ -12,15 +12,6 @@ public class ControllercasaShow {
 		return "index";
 	}
 	
-	@RequestMapping("/login")
-	public String login() {
-		return "Login";
-	}
-	
-	@RequestMapping("/cadastro")
-	public String cadastro() {
-		return "Cadastro";
-	}
-	
+
 
 }
